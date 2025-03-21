@@ -14,3 +14,12 @@ h1 {
   font-size: 3em;
 
 }
+
+p {
+  font-family: Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #283e50;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  margin: 0;
+}
