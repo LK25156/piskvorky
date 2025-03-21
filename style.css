@@ -58,3 +58,13 @@ a {
   background: #0197f6;
 
 }
+
+a.btn-pravidla:hover {
+  background: #1cbb96;
+
+}
+
+a.btn-hrat:hover {
+  background: #0090e9;
+
+}
