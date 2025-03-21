@@ -23,3 +23,15 @@ p {
   box-sizing: border-box;
   margin: 0;
 }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
