@@ -4,3 +4,13 @@ body {
   display: flex;
   justify-content: center;
 }
+
+h1 {
+  font-family: lobster, sans-serif;
+  background-color: #ffffff;
+  padding: 15px 0;
+  width: 100%;
+  margin: 0;
+  font-size: 3em;
+
+}
