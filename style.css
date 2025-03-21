@@ -35,3 +35,17 @@ p {
   margin: 0;
   text-align: center;
 }
+
+img {
+  width: 100%;
+
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px 0;
+  color: #ffffff;
+  display: block;
+  width: 100%;
+}
