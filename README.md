@@ -44,7 +44,7 @@ Toto je první ze série pěti úkolů, ve kterých si postupně naprogramuješ 
 
 1. Vedle souboru `index.html` vytvoř i `styly.css` a napoj je do stránky pomocí tagu `<link … />`.
 
-1. Do stejné složky si stáhni obrázek [uvodni.jpg](https://github.com/Czechitas-podklady-WEB/Ukol-Piskvorky-1/raw/main/podklady/uvodni.jpg).
+1. Do stejné složky si stáhni obrázek [uvodni.jpg](ggi).
 
 1. Postupnou úpravou HTML a CSS uprav stránku do této podoby:
 
@@ -65,7 +65,7 @@ Toto je první ze série pěti úkolů, ve kterých si postupně naprogramuješ 
 
 1. Tlačíka by se po najetí myši měly ztmavit.
 
-   ![interakce](zadani/interakce.gif)
+   ![interakce](zadani/integirakce.gif)
 
 ### Poznámky ke grafice
 
