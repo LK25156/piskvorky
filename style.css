@@ -1,11 +1,11 @@
 body {
   background: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
-  width: 100vw;
   background-attachment: fixed;
   display: flex;
   justify-content: center;
-  padding-top: 30px;
+  height: 100vh;
+
 }
 
 h1 {
@@ -15,6 +15,9 @@ h1 {
   width: 100%;
   margin: 0;
   font-size: 3em;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 
 }
 
@@ -28,11 +31,6 @@ p {
   margin: 0;
 }
 
-.lobster-regular {
-  font-family: "Lobster", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
 
 .container {
   display: flex;
@@ -71,21 +69,21 @@ img {
 
 }
 
-.button.button--green {
+.button--green {
   background: #1fcca4;
 }
 
-.button.button--blue {
+.button--blue {
   background: #0197f6;
 
 }
 
-.button.button--green:hover {
+.button--green:hover {
   background: #1cbb96;
 
 }
 
-.button.button--blue:hover {
+.button--blue:hover {
   background: #0090e9;
 
 }
