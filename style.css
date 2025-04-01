@@ -5,9 +5,7 @@ body {
   display: flex;
   justify-content: center;
   height: 100vh;
-  font-family: Arial, sans-serif;
-  text-align: center;
-
+  
 }
 
 h1 {
@@ -90,50 +88,26 @@ img {
 
 }
 
-header {
+
+.lobster-regular{
+  font-family: "Lobster", sans-serif;
+
+}
+.hlavni-menu{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 10px;
   padding: 10px;
 }
 
-header a img {
-  width: 30px;
-  height: 30px;
-  filter: invert(1); /* Bílé ikonky se na světlém pozadí zobrazí */
-  transition: opacity 0.3s;
+.icon {
+  width: 40px; /* Nastaví šířku ikony */
+  height: 40px; /* Nastaví výšku ikony */
+  filter: invert(1); /* Protože jsou ikony bílé, invertuje barvy na tmavém pozadí */
+  cursor: pointer; /* Ukazatel myši jako u tlačítka */
 }
 
-header a img:hover {
-  opacity: 0.7;
-}
+body.hra{
+  background: linear-gradient(#615dad, #ffc8da);
 
-.game-container {
-  max-width: 80vmin;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 2px;
-}
-
-.cell {
-  width: 8vmin;
-  height: 8vmin;
-  background-color: #ddd;
-  border: none;
-  transition: background-color 0.3s;
-}
-
-.cell:hover, .cell:focus {
-  background-color: #bbb;
-}
-
-.circle {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 4px solid black;
-  border-radius: 50%;
 }
