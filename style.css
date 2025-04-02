@@ -1,3 +1,8 @@
+html {
+  box-sizing: border-box;
+}
+
+
 body {
   background: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
@@ -61,7 +66,6 @@ img {
 
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
-  /*max-width: 400px;*/
   padding: 30px 0;
   width: 100%;
   color: #ffffff;
@@ -88,22 +92,44 @@ img {
 
 }
 
+/*----------------------------------------------------*/
 
-.lobster-regular{
-  font-family: "Lobster", sans-serif;
-
+.obsah-hry {
+  margin: 0 auto;
+  max-width: 80vmin;
 }
-.hlavni-menu{
+
+.hlavni-menu {
   display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.icon {
-  width: 40px; /* Nastaví šířku ikony */
-  height: 40px; /* Nastaví výšku ikony */
-  filter: invert(1); /* Protože jsou ikony bílé, invertuje barvy na tmavém pozadí */
-  cursor: pointer; /* Ukazatel myši jako u tlačítka */
+.hrac {
+  display:flex;
+  align-items: center;
 }
 
+.znovu,
+.domu {
+  padding: 5px;
+  border-radius: 10%;
+}
+
+.hraci-plocha {
+  display:grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border: 1px solid black;
+}
+
+.hraci-pole {
+  border: 1px solid rgb(94, 93, 93);
+  padding-top: 100%;
+  background-color: rgba(255,255,255,0.4);
+}
+
+.hraci-pole:hover,
+.hraci-pole:focus {
+  background-color: rgba(255,255,255,0.6);
+}
