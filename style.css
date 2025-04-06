@@ -95,15 +95,13 @@ img {
 }
 
 /*----------------------------------------------------*/
-.container2{
+
+.obsah-hry {
   max-width: 80vmin;
 }
-/*.obsah-hry {
-  margin: 0 auto;
-  max-width: 80vmin;
-}*/
 
 .hlavni-menu {
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,12 +112,31 @@ img {
   align-items: center;
 }
 
-.znovu,
+.znovu{
+  padding: 5px;
+  border-radius: 10%;
+  width: 30px; 
+  height: 30px;
+  background: #0197f6;
+}
+
 .domu {
   padding: 5px;
   border-radius: 10%;
+  width: 30px; 
+  height: 30px;
+  background: #1fcca4; 
 }
 
+.jmeno-hry {
+  background-color: transparent;
+  text-align: center;
+  margin: 0;
+
+}
+.play-button img {
+  margin: 3px;
+}
 .hraci-plocha {
   display:grid;
   grid-template-columns: repeat(10, 1fr);
@@ -137,9 +154,4 @@ img {
 .hraci-pole:focus {
   background-color: rgba(255,255,255,0.6);
 
-}
-
-.hlavni-menu {
-  display: flex;
-  justify-content: space-between;
 }
