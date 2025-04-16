@@ -1,7 +1,7 @@
 let currentPlayer = "circle"; //proměnná, která uchová info, kdo je na tahu
 
-const fields = document.querySelectorAll(".hraci_pole"); //všechna políčka na herní ploše
-const playerElement = document.querySelector(".prave_hraje"); //element, kdo právě hraje
+const fields = document.querySelectorAll(".hraci-pole"); //všechna políčka na herní ploše
+const playerElement = document.querySelector(".prave-hraje"); //element, kdo právě hraje
 
 for(let i = 0; i < 10;i++) {               //cyklus projde prvních deset políček
 fields[i].addEventListener("click", (event) => {         //posluchač události, až na něj někdo klikne
@@ -23,7 +23,7 @@ fields[i].addEventListener("click", (event) => {         //posluchač události,
 
 //Restart hry
 
-const restartLink = document.querySelector (".game_link");
+const restartLink = document.querySelector (".znovu");
 
 restartLink.addEventListener("click", (event) => {
   const confirmed = confirm("Opravdu chceš restartovat hru?");
