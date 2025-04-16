@@ -158,14 +158,14 @@ img {
 
 /*----------------------------------------------------------*/
 .board__field--circle {
-  background-image: url("zadani/circle\ \(1\).svg");
+  background-image: url("circle\ \(1\).svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
   /*animation: zoomIn 0.15s ease-out*/
 }
 .board__field--cross {
-  background-image: url("zadani/cross.svg");
+  background-image: url("cross.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
