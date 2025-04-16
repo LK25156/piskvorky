@@ -137,8 +137,11 @@ img {
 .play-button img {
   margin: 3px;
 }
-.krouzek {
-  margin: 3px;
+.symbol {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
 }
 .hraci-plocha {
   display:grid;
