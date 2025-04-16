@@ -137,6 +137,9 @@ img {
 .play-button img {
   margin: 3px;
 }
+.krouzek {
+  margin: 3px;
+}
 .hraci-plocha {
   display:grid;
   grid-template-columns: repeat(10, 1fr);
@@ -157,18 +160,16 @@ img {
 }
 
 /*----------------------------------------------------------*/
-.board__field--circle {
-  background-image: url("circle\ \(1\).svg");
+.board_field--circle {
+  background-image: url("circle (1).svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
   /*animation: zoomIn 0.15s ease-out*/
 }
-.board__field--cross {
+.board_field--cross {
   background-image: url("cross.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
-  /*animation: zoomIn 0.15s ease-out*/
-
 }

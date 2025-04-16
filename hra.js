@@ -9,11 +9,12 @@ fields[i].addEventListener("click", (event) => {         //posluchač události,
 
   if(currentPlayer === "circle") {                //když je na tahu kolečko, přepíšeš do textu nahoru křížek
     field.classList.add ("board_field--circle");
-    playerElement.textContent = "hraje: křížek";
+    console.log("Přidána třída: board_field--circle"); // Ladicí výpis
+    playerElement.textContent = "Hraje: křížek";
     currentPlayer = "cross";
   } else {
     field.classList.add ("board_field--cross");  //když je na tahu křížek, přepíšeš do textu nahoru kolečko
-    playerElement.textContent = "hraje: kolečko";
+    playerElement.textContent = "Hraje: kolečko";
     currentPlayer = "circle";
   }
 
