@@ -97,7 +97,7 @@ img {
 /*----------------------------------------------------*/
 
 .obsah-hry {
-  max-width: 80vmin;
+  max-width: 80vw;
 }
 
 .hlavni-menu {
@@ -153,5 +153,22 @@ img {
 .hraci-pole:hover,
 .hraci-pole:focus {
   background-color: rgba(255,255,255,0.6);
+
+}
+
+/*----------------------------------------------------------*/
+.board__field--circle {
+  background-image: url("zadani/circle\ \(1\).svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  /*animation: zoomIn 0.15s ease-out*/
+}
+.board__field--cross {
+  background-image: url("zadani/cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  /*animation: zoomIn 0.15s ease-out*/
 
 }
