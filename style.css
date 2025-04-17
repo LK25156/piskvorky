@@ -4,10 +4,10 @@ html {
 
 
 body {
-  background: linear-gradient(#615dad, #ffc8da);
+  background: linear-gradient(to bottom, #615dad, #ffc8da);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,7 +97,8 @@ img {
 /*----------------------------------------------------*/
 
 .obsah-hry {
-  max-width: 80vw;
+  margin: 0 auto;    /*upraveno*/
+  max-width: 80vmin;   /*upraveno*/
 }
 
 .hlavni-menu {
@@ -137,7 +138,7 @@ img {
 .play-button img {
   margin: 3px;
 }
-.symbol {
+.icon {
   width: 20px;
   height: 20px;
   vertical-align: middle;
@@ -176,3 +177,5 @@ img {
   background-position: center;
   background-size: 60%;
 }
+
+
