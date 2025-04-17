@@ -1,7 +1,7 @@
 let currentPlayer = "circle"; //proměnná, která uchová info, kdo je na tahu
 
 const fields = document.querySelectorAll(".hraci-pole"); //všechna políčka na herní ploše
-const playerElement = document.querySelector(".prave-hraje"); //element, kdo právě hraje
+let playerElement = document.querySelector(".prave-hraje"); //element, kdo právě hraje, změnila jsem na let
 //const playerImage = document.querySelector(".prave-hraje img");
 
 
@@ -11,11 +11,12 @@ fields[i].addEventListener("click", (event) => {         //posluchač události,
 
   if(currentPlayer === "circle") {                //když je na tahu kolečko, přepíšeš do textu nahoru křížek
     field.classList.add ("board_field--circle");
-    //playerElement.src = "cross.svg";
+    playerElement.src = "cross--white.svg";
     playerElement.textContent = "Hraje: křížek";
     currentPlayer = "cross";
   } else {
-    field.classList.add ("board_field--cross");  //když je na tahu křížek, přepíšeš do textu nahoru kolečko
+    field.classList.add ("board_field--cross");
+    playerElement.src ="circle.svg"  //když je na tahu křížek, přepíšeš do textu nahoru kolečko
     playerElement.textContent = "Hraje: kolečko";
     currentPlayer = "circle";
   }
