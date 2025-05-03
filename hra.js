@@ -1,38 +1,39 @@
-let currentPlayer = "circle"; //proměnná, která uchová info, kdo je na tahu
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4' //funkce findWinner
 
-const fields = document.querySelectorAll(".hraci-pole"); //všechna políčka na herní ploše
-let playerElement = document.querySelector(".prave-hraje"); //element, kdo právě hraje, změnila jsem na let
-//const playerImage = document.querySelector(".prave-hraje img");
+let currentPlayer = "circle"; 
+
+const button = document.querySelectorAll(".hraci-pole"); //všechna políčka na herní ploše
+let playerElement = document.querySelector(".prave-hraje"); 
 
 
-for(let i = 0; i < 10;i++) {               //cyklus projde prvních deset políček
-fields[i].addEventListener("click", (event) => {         //posluchač události, až na něj někdo klikne
-  const field  = event.target;    //proměnná field, na kt. políčko uživatel klikl
-
-  if(currentPlayer === "circle") {                //když je na tahu kolečko, přepíšeš do textu nahoru křížek
-    field.classList.add ("board_field--circle");
-    playerElement.src = "cross--white.svg";
-    playerElement.textContent = "Hraje: křížek";
+button.forEach((button) => {
+button.addEventListener("click", (event) => {         
+  if(currentPlayer === "circle") {                
+    button.classList.add ("board_field--circle");
     currentPlayer = "cross";
-  } else {
-    field.classList.add ("board_field--cross");
-    playerElement.src ="circle.svg"  //když je na tahu křížek, přepíšeš do textu nahoru kolečko
-    playerElement.textContent = "Hraje: kolečko";
+    playerElement.innerHTML = `<img src="cross--white.svg">`;
+    //playerElement.textContent = "Hraje: křížek";
+  } else if (currentPlayer === 'cross') {
+    button.classList.add ("board_field--cross");
+    playerElement.innerHTML =`<img src="circle.svg"> `;
+    //playerElement.textContent = "Hraje: kolečko";
     currentPlayer = "circle";
   }
-
-  field.disabled = true;              //na toto políčko už znovu nejde kliknout
+  button.disabled = true;              //na toto políčko už znovu nejde kliknout
                       
 });
-}
+});
 
 //Restart hry
 
 const restartLink = document.querySelector (".znovu");
 
 restartLink.addEventListener("click", (event) => {
-  const confirmed = confirm("Opravdu chceš restartovat hru?");
-  if (!confirmed) {
+  const response = confirm("Opravdu chceš restartovat hru?");
+  if (!response) {
     event.preventDefault();
   }
-})
+});
+
+
+
