@@ -97,8 +97,9 @@ img {
 /*----------------------------------------------------*/
 
 .obsah-hry {
-  margin: 0 auto;    /*upraveno*/
-  max-width: 80vmin;   /*upraveno*/
+  margin: 0 auto;
+  max-width: 90vmin;
+  
 }
 
 .hlavni-menu {
@@ -146,14 +147,15 @@ img {
 }
 .hraci-plocha {
   display:grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(10, 60px);
+  grid-template-rows: repeat(10, 60px); /*1fr)*/
   border: 1px solid black;
 }
 
 .hraci-pole {
-  border: 1px solid rgb(94, 93, 93);
-  padding-top: 100%;
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgb(94, 93, 93);
   background-color: rgba(255,255,255,0.4);
 }
 
@@ -179,3 +181,20 @@ img {
 }
 
 
+/*--------------------------------------------*/
+@media (max-width: 600px) {
+  .hraci-plocha {
+    grid-template-columns: repeat(10, 10vw);
+    grid-template-rows: repeat(10, 10vw);
+  }
+  
+  .hraci-pole {
+    width: 10vw;
+    height: 10vw;
+  }
+}
+
+.img.cross--white{
+width: 1vw;
+width: 1vw;
+}
