@@ -11,11 +11,11 @@ button.addEventListener("click", (event) => {
   if(currentPlayer === "circle") {                
     button.classList.add("board_field--circle");
     currentPlayer = "cross";
-    playerElement.innerHTML = `Hraje: <img src="cross--white.svg">`;
+    playerElement.innerHTML = `Hraje: <img src="cross--white.svg" alt="bílý křížek">`;
     
   } else  {
     button.classList.add("board_field--cross");
-    playerElement.innerHTML =`Hraje: <img src="circle.svg"> `;
+    playerElement.innerHTML =`Hraje: <img src="circle.svg" alt="bílé kolečko"> `;
     currentPlayer = "circle";
     }
   button.disabled = true; //na toto políčko už znovu nejde kliknout                   
