@@ -2,6 +2,7 @@ import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4' //funkce findWinn
 
 let currentPlayer = "circle"; 
 
+
 const button = document.querySelectorAll(".hraci-pole"); //všechna políčka na herní ploše
 let playerElement = document.querySelector(".prave-hraje"); 
 
@@ -22,19 +23,24 @@ button.addEventListener("click", (event) => {
 
 
 //Získání aktuálního stavu herního pole
-const herniPole = Array.from(document.querySelectorAll(".hraci-pole")).map((btn) => {
+const board = Array.from(document.querySelectorAll(".hraci-pole")).map((btn) => {  //herniPole puvodne
   if(btn.classList.contains("board_field--circle")) return"o";
   if(btn.classList.contains("board_field--cross")) return "x";
   return"_";
 });
 
 //Kontrola vítěze
-const vitez = findWinner(herniPole);
+const vitez = findWinner(board);
 if (vitez=== "o" || vitez=== "x" ) {
   setTimeout(() => {
     alert(`Vyhrál hráč se symbolem ${vitez}.`)
     location.reload(); //Restart hry po oznámení vítěze
   }, 200);
+} else if (currentPlayer === "cross") {
+  getAIMove(board).then(({ x, y}) => {
+    const index = x + y * 10;
+    button[index].click();
+  });
 }
 });
 });
@@ -49,4 +55,17 @@ restartLink.addEventListener("click", (event) => {
 });
 
 
+//AI 
 
+const getAIMove = async (board) => {
+  const response = await fetch("https://piskvorky.czechitas-podklady.cz/api/suggest-next-move",{
+  method: "POST",
+  headers: {"Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    board: board, 
+    player: "x"})
+  });
+  const data = await response.json();
+  return data;
+  }
