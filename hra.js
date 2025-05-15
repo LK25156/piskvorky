@@ -1,16 +1,16 @@
 import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4' //funkce findWinner
 
 let currentPlayer = "circle"; 
-
-
-const button = document.querySelectorAll(".hraci-pole"); //všechna políčka na herní ploše
+const boardFields = Array.from(document.querySelectorAll(".hraci-pole"));
+console.log("Pole boardFields:", boardFields);
 let playerElement = document.querySelector(".prave-hraje"); 
+const restartButton = document.querySelector(".znovu");
 
 
-button.forEach((button) => {
-button.addEventListener("click", (event) => {         
+boardFields.forEach((field) => {
+field.addEventListener("click", () => {         
   if(currentPlayer === "circle") {                
-    button.classList.add("board_field--circle");
+    field.classList.add("board_field--circle");
     currentPlayer = "cross";
     playerElement.innerHTML = `Hraje: <img src="cross--white.svg" alt="bílý křížek">`;
     
@@ -19,35 +19,48 @@ button.addEventListener("click", (event) => {
     playerElement.innerHTML =`Hraje: <img src="circle.svg" alt="bílé kolečko"> `;
     currentPlayer = "circle";
     }
-  button.disabled = true; //na toto políčko už znovu nejde kliknout                   
+  field.disabled = true; //na toto políčko už znovu nejde kliknout                   
 
 
 //Získání aktuálního stavu herního pole
-const board = Array.from(document.querySelectorAll(".hraci-pole")).map((btn) => {  //herniPole puvodne
+const boardState = boardFields.map((btn) => { 
   if(btn.classList.contains("board_field--circle")) return"o";
   if(btn.classList.contains("board_field--cross")) return "x";
   return"_";
 });
+console.log("Stav hracího pole:", boardState);
 
 //Kontrola vítěze
-const vitez = findWinner(board);
-if (vitez=== "o" || vitez=== "x" ) {
+const winner = findWinner(boardState);
+if (winner === "o" || winner === "x" ) {
   setTimeout(() => {
-    alert(`Vyhrál hráč se symbolem ${vitez}.`)
+    alert(`Vyhrál hráč se symbolem ${winner}.`)
     location.reload(); //Restart hry po oznámení vítěze
   }, 200);
 } else if (currentPlayer === "cross") {
-  getAIMove(board).then(({ x, y}) => {
-    const index = x + y * 10;
-    button[index].click();
-  });
+  console.log("Na tahu je křížek, zkouším získat tah AI");
+  getAIMove(boardState).then(({ x, y}) => {
+    console.log("Souřadnice z API - x:", x, "y:", y);
+     if (typeof x === 'number' && typeof y === 'number') {
+    const index =  x + y * 10;
+    console.log("vypočítaný index:", index);
+    const targetField = boardFields[index];
+    if (targetField) {
+       targetField.click();
+      } else {
+   console.error("Chyba:tlačítko na indexu neexistuje pro vypočítaný index", index);
+  }
+  } else {
+    console.error("Chyba: API nevrátilo platné souřadnice tahu.");
+  }
+});
 }
 });
 });
 
+
 //Restart hry
-const restartLink = document.querySelector (".znovu");
-restartLink.addEventListener("click", (event) => {
+restartButton.addEventListener("click", (event) => {
   const response = confirm("Opravdu chceš restartovat hru?");
   if (!response) {
     event.preventDefault();
@@ -56,16 +69,17 @@ restartLink.addEventListener("click", (event) => {
 
 
 //AI 
-
 const getAIMove = async (board) => {
+  console.log("Data odesílaná na API:",{ board: board, player: "x" });
   const response = await fetch("https://piskvorky.czechitas-podklady.cz/api/suggest-next-move",{
   method: "POST",
-  headers: {"Content-Type": "application/json"
-  },
+  headers: {"Content-Type": "application/json" },
   body: JSON.stringify({
     board: board, 
-    player: "x"})
+    player: "x"
+  })
   });
   const data = await response.json();
   return data;
-  }
+  
+};
